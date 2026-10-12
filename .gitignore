@@ -1,0 +1,54 @@
+# ── 文献 PDF ──────────────────────────────────────────
+# 版权 + 体积问题（单篇常 5-20MB），默认不入库。
+# 需要入库时：删掉下一行，并把 PDF 统一放进 refs/pdfs/
+*.pdf
+
+# ── Zotero ─────────────────────────────────────────────
+# refs/refs.bib 入库；本地数据库与附件不入库（体积巨大）
+Zotero/
+zotero.sqlite
+zotero.sqlite-journal
+storage/
+
+# ── Python ─────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# ── LaTeX 构建产物 ─────────────────────────────────────
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.out.bak
+latexmk.pl
+
+# ── 操作系统 ───────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ── 编辑器 / 工具 ──────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.opencode/
+.codegraph/

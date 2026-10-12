@@ -1,0 +1,88 @@
+\section{Open Problems}
+\label{sec:open}
+
+% 本节对应 slides/outline.md 的 P11--P13。
+% 硬性要求: 2--3 个。每个必须有文献支撑，且必须回答"如果我错了会怎样"。
+%
+% ⚠️ 回答不了自己提出的争议，比不提出更糟。若确实答不上来，
+%    坦白说"这正是我们认为的开放问题"。
+
+\subsection{Q1: Is the reported gain real?}
+
+\textbf{The challenge.} \cite{lin2026notbenefit} argues that harness updating
+and harness benefit must be disentangled: a system that can modify its own
+harness is not thereby a system that becomes better. We find this position
+convincing on inspection of the evidence, for three reasons.
+
+First, a search procedure that generates many candidate harnesses and retains
+the best-scoring one will exhibit an apparent gain even if modification is
+uninformative; the expected maximum of $N$ draws exceeds their mean.
+
+Second, where the same task set is used both to select among candidates and to
+report the result, the reported gain is optimistic by an amount that depends on
+the number of candidates.
+
+Third, contamination is difficult to exclude when the modification procedure
+itself is given access to benchmark tasks.
+
+\textbf{Our position.} \todo{}
+
+\textbf{What would settle it.} A held-out task set never exposed to the
+modification procedure, plus a report of the full distribution of candidate
+scores rather than only the maximum.
+
+\textbf{If we are wrong.} \todo{Required. If the gains reproduce
+independently, the field's core narrative holds and this review's contribution
+reverts to mapping the method space.}
+
+\subsection{Q2: Is the verifier independent of what it verifies?}
+
+\textbf{The challenge.} A harness that both proposes and certifies its own
+modifications does not possess an independent check. This is the structural
+concern behind axis B's distinction between \code{self-preference} and
+\code{external-verifier}.
+
+\cite{pan2026rho} makes the problem concrete by proceeding on the premise that
+ground-truth validation is unavailable in deployment, and optimizing the harness
+from historical trajectories under self-preference. \cite{banerjee2026severa}
+takes the opposite route, attaching formal guarantees to the synthesis of
+self-evolving agent programs.
+
+The interesting question is not which route is correct but what each costs.
+Self-preference removes a dependency the field may not be able to satisfy in
+practice; formal guarantees constrain the space of systems that can be
+certified. \todo{After deep-reading SEVerA, state the scope of its guarantee
+and its relaxation assumptions.}
+
+\textbf{Our position.} \todo{}
+
+\textbf{What would settle it.} \todo{Has any work re-evaluated self-assessed
+results with an independent evaluator?}
+
+\textbf{If we are wrong.} \todo{Required. If self-preference validation works,
+the field can operate in entirely unlabelled deployment settings, which is a
+major practical advance.}
+
+\subsection{Q3: Is compute accounted for?}
+
+\textbf{The challenge.} \todo{To be supported from the deep-read corpus. This
+is the easiest of the three to verify and should be done first.}
+
+\textbf{Our position.} \todo{}
+
+\textbf{If we are wrong.} \todo{Required.}
+
+\subsection{Scope note}
+
+We deliberately omit one candidate concern --- the general reproducibility
+crisis of the field, arising from the failure to release complete harnesses and
+evolution archives. It is real but engineering-level, and including it would
+dilute the argument.
+
+% ----------------------------------------------------------------------
+% 候选引用:
+%   \cite{lin2026notbenefit}  Q1 的直接出处
+%   \cite{pan2026rho}         Q2
+%   \cite{banerjee2026severa} Q2 --- 形式化路线
+%   \cite{chen2026safety}     安全面
+% ----------------------------------------------------------------------

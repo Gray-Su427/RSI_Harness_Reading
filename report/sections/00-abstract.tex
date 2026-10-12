@@ -1,0 +1,34 @@
+% 摘要
+%
+% 要求：150-250 词。结构建议：
+%   1. 本综述考察什么（1-2 句）
+%   2. 我们提出了什么分类体系（1-2 句）
+%   3. 我们得出了什么判断（2-3 句）
+%   4. 留下什么开放问题（1 句）
+%
+% ⚠️ 摘要必须与 06-conclusion.tex 的核心结论一致。
+% ⚠️ pdflatex 无法输出中文：正文与 \todo{} 内容一律用英文，
+%    中文说明只能写在以 % 开头的注释行里。
+
+\begin{abstract}
+Recursive self-improvement (RSI) requires that an improved system participate
+in producing the next improvement. This review examines the outermost of three
+commonly distinguished loci of self-improvement: the \emph{harness} --- the
+program structure that organizes a foundation model's reasoning, tool use, and
+action --- as distinct from model parameters or training data. We survey
+\todo{N} primary studies spanning \todo{2023 to 2026}, comprising \todo{N}
+peer-reviewed conference papers, \todo{N} industrial reports, and \todo{N}
+preprints from 2025 and 2026.
+
+We organize this literature along five axes: the \emph{target} of improvement
+(prompt, control flow, source code, tools, memory, evaluator, or context
+strategy), the \emph{signal} driving improvement, the \emph{search operator},
+the \emph{strength of guarantees}, and --- most consequentially --- the
+\emph{depth of recursion}. We find that \todo{one-sentence core claim, in
+English}.
+
+Several claims in the current literature remain unverified, particularly
+regarding whether reported gains survive scrutiny for selection bias, compute
+cost, and the independence of the verifier from the system being optimized.
+\todo{Close with the two or three open problems named in Section 5.}
+\end{abstract}

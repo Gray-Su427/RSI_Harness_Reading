@@ -1,0 +1,66 @@
+% =====================================================================
+% tables/comparison.tex — 方法比较表
+% 由 04-evidence.tex 通过 \input 引入
+%
+% ⚠️ 填写提示:
+%   - "强 baseline" 关注是否与【同算力】的对手比较，而非默认脚手架
+%   - "算力报告" 填 No 本身就是一条证据（见 Q3）
+%   - "代码开源" 多数本方向工作不公开完整 harness 与 evolution archive
+% =====================================================================
+
+\begin{table}[H]
+\centering
+\caption{Method comparison across the deep-read corpus. \emph{Strong baseline}
+denotes comparison against a compute-matched competitor rather than a default
+scaffold.}
+\label{tab:comparison}
+\scriptsize
+\setlength{\tabcolsep}{3.2pt}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabular}{@{}l l l l l l l l l@{}}
+\toprule
+\thead{Dimension}
+& \thead{STOP} & \thead{ADAS} & \thead{SICA} & \thead{DGM}
+& \thead{AlphaE.} & \thead{MGM} & \thead{RHO} & \thead{SEVerA} \\
+\midrule
+Target (A)
+  & code & ctrl+code & code & code+eval & code & code & prompt+ctrl+tool & code+ctrl \\
+Signal (B)
+  & ext.\ ver. & ext.\ ver. & failure & ext.\ ver. & ext.\ ver. & \na & \textbf{self-pref.} & ext.\ ver. \\
+Operator (C)
+  & refine+evo & tree & evo & evo & evo & evo & \na & \na \\
+Guarantee (D)
+  & empir. & empir. & empir. & empir. & empir. & empir. & \na & \textbf{formal} \\
+Depth (E)
+  & one-shot & one-shot & iter. & \textbf{full} & one-shot & iter. & iter. & \na \\
+\midrule
+Benchmarks
+  & \todo{} & \todo{} & \todo{} & \todo{} & \todo{} & \todo{} & \todo{} & \todo{} \\
+Strong baseline?
+  & \todo{} & \todo{} & \todo{} & \todo{} & \todo{} & \todo{} & \todo{} & \todo{} \\
+Compute reported?
+  & \todo{} & \todo{} & \todo{} & \todo{} & \todo{} & \todo{} & \todo{} & \todo{} \\
+Code released?
+  & \todo{} & \todo{} & \todo{} & \todo{} & \todo{} & \todo{} & \todo{} & \todo{} \\
+Peer reviewed?
+  & \unverified & \unverified & \unverified & \unverified & no & no & no & no \\
+Industry
+  & no & no & no & \textbf{Sakana} & \textbf{DeepMind} & no & no & no \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{2pt}
+{\footnotesize
+Abbreviations: \texttt{ctrl} = \texttt{control-flow}; \texttt{eval} =
+\texttt{evaluator}; \texttt{ext.\ ver.} = \texttt{external-verifier};
+\texttt{self-pref.} = \texttt{self-preference};
+\texttt{refine+evo} = \texttt{refine}, \texttt{evolutionary};
+\texttt{iter.} = \texttt{iterative}; \texttt{empir.} = \texttt{empirical};
+\texttt{one-shot}, \texttt{tree}, \texttt{evo} as on the respective axes.
+
+The mark \unverified indicates a venue whose acceptance status has \emph{not} been
+confirmed against DBLP or OpenReview. Entries taken from the course slides are
+second-hand information and are marked accordingly in \texttt{refs/refs.bib}.
+}

@@ -1,0 +1,2 @@
+id,title,year,status,source,url,file,bytes,sha1,fetched_at
+arxiv-2310.02304,Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation,2023,ok,arxiv,https://arxiv.org/pdf/2310.02304,arxiv-2310.02304__Self_Taught_Optimizer_STOP_Recursively_Self_Improving_Code_G.pdf,966894,de8d7e13cd483f86f5d8d4ec7b5b4787b20d6885,2026-10-12 17:20:15
