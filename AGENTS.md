@@ -274,6 +274,7 @@ RSI_Harness_Review/
 - [ ] 其中 **≥1 篇**经典或高质量**同行评审**论文（非 preprint）
 - [ ] 其中 **≥1 篇** **2025–2026** 新工作
 - [ ] 其中 **≥1 篇工业界**（或产学合作）研究——`industry: true` 且 `org` 非空
+      （现有 **10 篇**候选，见 §8.3；口径为"署名含企业机构"，国家实验室不算）
 - [ ] 方法比较表完成（所有精读论文在同一张表内对比）
 - [ ] 分类体系有 **≥2 篇**论文作为每条轴的例证
 - [ ] 每条 `axis_e_recursiveness` 均附**作者原话**佐证
@@ -348,6 +349,13 @@ python scripts/fetch_pdfs.py --only arxiv-2505.22954
 > **核验时间：2026-10-12。** 全部通过 arXiv 实际检索确认存在。
 > `venue` 一栏中，标注 ⚠️ 的表示**来自课程 PPT，尚未独立核验录用状态**——入库前请按 7.1 复核。
 >
+> ✅ **泛读进度（2026-10-13）**：17 篇全部完成泛读卡片，见 `notes/skim/`（17 个 `.md`）。
+> 卡片中的作者原话已逐条回查 PDF 核实。
+> 泛读同时发现并更正了 3 处元数据错误（STOP 机构、SEVerA 标题、8 篇 `industry` 口径），
+> 均已在 `verified.csv` 的 `note` 字段留痕。
+> ⚠️ **`axis_*` 五列仍保持泛读前的原样**——泛读判断只写在卡片里且标注"待精读确认"，
+> 按 §7.1 纪律，未经精读不填 CSV。
+>
 > 📄 **机器可读版本：[`refs/verified.csv`](refs/verified.csv)**（17 行）。
 > 下表是它的人类可读镜像；**以 CSV 为准**，两者若有冲突改 CSV。
 > 所有条目的 `venue_verified` 当前**均为 `false`**。
@@ -367,9 +375,9 @@ python scripts/fetch_pdfs.py --only arxiv-2505.22954
 
 | ID | 标题 | 作者 | 年份 | 要点 |
 |---|---|---|---|---|
-| `arxiv-2606.09498` | Self-Harness: Harnesses That Improve Themselves | Zhang, Zhang, Li, Zhang, Chen, Zhang, Bai, Hu | 2026 | 提出 harness 设计是**模型特定**的；含阿里通义团队 |
-| `arxiv-2607.15524` | Recursive Harness Self-Improvement | Lee, Xu, Seely, Lee, Zaharia, Tang | 2026 | harness-in-the-loop；作者含 Spark / UC Berkeley |
-| `arxiv-2605.18747` | Code as Agent Harness | Ning, Tieu, Fu, …(42 位作者) | 2026 | 概念统一框架：**代码即 harness**；UIUC / Meta 等 |
+| `arxiv-2606.09498` | Self-Harness: Harnesses That Improve Themselves | Zhang, Zhang, Li, Zhang, Chen, Zhang, Bai, Hu | 2026 | 提出 harness 设计是**模型特定**的；机构为上海人工智能实验室（国家实验室，**不算工业界**） |
+| `arxiv-2607.15524` | Recursive Harness Self-Improvement | Lee, Xu, Seely, Lee, Zaharia, Tang | 2026 | harness-in-the-loop；机构为 **Sakana AI** / UC Berkeley（非 Spark，已据 PDF 更正）；自称 recursive 但只完成递归循环前半段 |
+| `arxiv-2605.18747` | Code as Agent Harness | Ning, Tieu, Fu, …(52 位作者，已据 PDF 更正) | 2026 | 概念统一框架：**代码即 harness**；UIUC / Meta / Stanford；**综述立场文，无方法无实验** |
 | `arxiv-2608.07645` | Mendel Gödel Machine | Liu, Liu, Yan, Tresp, Ma | 2026 | 用 archive 中**多条轨迹**做比较进化，改进单轨迹突变 |
 | `arxiv-2606.05922` | Evolving Agents in the Dark: Retrospective Harness Optimization via Self-Preference (RHO) | Pan, Liu, Lin, … | 2026 | **无需标注验证集**，仅用历史轨迹自监督优化 harness |
 | `arxiv-2605.30621` | Harness Updating Is Not Harness Benefit | Lin, Wu, Wang | 2026 | 🔴 **争议核心**：能更新 ≠ 有收益 |
@@ -377,10 +385,27 @@ python scripts/fetch_pdfs.py --only arxiv-2505.22954
 
 ### 8.3 工业界 / 应用面
 
-| ID | 标题 | 机构 | 年份 | 要点 |
+> **口径（2026-10-13 修订）**：`industry: true` = 作者署名中**含企业机构**，
+> 按 Gate 2「工业界**或产学合作**」判定。
+> **国家实验室与高校联合体不算**（如上海人工智能实验室 → `industry: false`）。
+> 全部 17 篇的署名机构已逐篇核对 PDF 首页，下表即审计结果。
+
+| ID | 标题 | 企业署名 | 年份 | 要点 |
 |---|---|---|---|---|
-| `arxiv-2506.13131` | AlphaEvolve: A coding agent for scientific and algorithmic discovery | **Google DeepMind** | 2025 | 🔴 **工业界首选**；进化式编码 agent，优化数据中心调度与数学问题 |
-| `arxiv-2505.22954` | Darwin Gödel Machine | **Sakana AI** | 2025 | 工业界 × 学术界（Clune / Vector） |
+| `arxiv-2506.13131` | AlphaEvolve: A coding agent for scientific and algorithmic discovery | **Google DeepMind** | 2025 | 🔴 **工业界首选**；进化式编码 agent，优化数据中心调度与数学问题；白皮书非同行评审 |
+| `arxiv-2505.22954` | Darwin Gödel Machine | **Sakana AI** | 2025 | 工业界 × 学术界（UBC / Vector）；唯一明确宣称"改进自改能力"的工作 |
+| `arxiv-2607.15524` | Recursive Harness Self-Improvement | **Sakana AI** + UC Berkeley | 2026 | 2026 新工作；自称 recursive 但只完成递归循环前半段，`co-evolution` 界定未决 |
+| `arxiv-2603.25111` | SEVerA: Verified Self-Evolving Agents | **Google** + UIUC | 2026 | 唯一提供形式化保证的工作；自陈"保证不覆盖计算成本" |
+| `arxiv-2606.05922` | Evolving Agents in the Dark (RHO) | **Microsoft Research Asia** + CityU HK | 2026 | B 轴 `self-preference` 唯一正面样本；Q2 必读 |
+| `arxiv-2605.30621` | Harness Updating Is Not Harness Benefit | **Amazon** + Penn State 等 | 2026 | 争议 Q1 核心实证；把"能更新"与"有收益"分开测量 |
+| `arxiv-2310.02304` | STOP | **Microsoft Research** + OpenAI + Stanford | 2023 | 作者亲手声明"不算完整 RSI"，E 轴反例原始出处 |
+| `arxiv-2504.15228` | A Self-Improving Coding Agent (SICA) | **iGent AI** + Bristol | 2025 | 首个把 meta agent = target agent 落到完整 codebase |
+| `arxiv-2605.18747` | Code as Agent Harness | **Meta** + UIUC + Stanford | 2026 | 概念框架长文，无方法无实验，不作证据 |
+| `arxiv-2610.00093` | Safety in Self-Evolving Agents | **Alibaba** + **OPPO** + **Rakuten** + ZJU | 2026 | Q4 的引用来源；把编排当**风险载体**而非改进对象 |
+
+> ⚠️ 其中 `arxiv-2605.18747`（Meta）与 `arxiv-2610.00093`（Alibaba/OPPO/Rakuten）虽为产学合作，
+> 但均为综述、无自我改进效果证据，**不可充当 Gate 2 的工业界实证项**。
+> Gate 2 的工业界硬指标有 8 个可用的方法论文候选，且**不再依赖 venue 尚未核验的 DGM**。
 
 ### 8.4 综述类（用于建立地图，不作为主要证据）
 
@@ -480,4 +505,4 @@ search_arxiv("Self-Harness", max_results=1)
 
 ---
 
-*最后更新：2026-10-12*
+*最后更新：2026-10-13*
