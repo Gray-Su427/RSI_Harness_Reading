@@ -1,6 +1,6 @@
 # refs/ — 文献元数据
 
-本目录是项目内**唯一的文献数据源**。笔记、证据、LaTeX 报告中的每一条引用都必须能追溯到这里。
+本目录是项目内**唯一的文献数据源**。笔记与写作仓库中的每一条引用都必须能追溯到这里。
 
 ## 文件
 
@@ -8,10 +8,11 @@
 |---|---|---|
 | `verified.csv` | **已核验**论文的元数据（当前 17 篇） | 手工维护 |
 | `pool.csv` | 泛读候选池，**尚未**核验/筛选的全集 | 泛读阶段持续追加 |
-| `refs.bib` | BibTeX 库，供 LaTeX 报告引用 | **由 Zotero 导出**，勿手写 |
+| `refs.bib` | BibTeX 库，供写作仓库引用 | **由 Zotero 导出**，勿手写 |
 
-> `refs.bib` 当前尚未生成。按 `AGENTS.md` §7.4，用 Zotero 管理并导出到本目录。
-> LaTeX 报告通过 `\bibliography{../refs/refs}` 引用本文件，不复制副本。
+> `refs.bib` 已提供引导版本（17 条，由 `verified.csv` 构造）。
+> 按 `AGENTS.md` §7.4，最终应由 Zotero 管理并导出到本目录。
+> 写作仓库通过 `scripts/sync_refs.py` 生成本地快照，不手改快照。
 
 ---
 
@@ -54,7 +55,7 @@
 
 ### ⚠️ 关于 `axis_*` 字段
 
-这五轴是**待验证假设**，见 `AGENTS.md` §5 与 `synthesis/taxonomy.md`。
+这五轴是**待验证假设**，见 `AGENTS.md` §5 与 `notes/AXES.md`。
 
 CSV 中的取值只填了摘要可支撑的部分；**未精读的论文保持为空**，不要提前填满。
 空值不是遗漏，是"尚未判断"的诚实标记。
@@ -97,5 +98,5 @@ CSV 字段内的**逗号**必须用双引号包裹（标准 CSV 转义）：
 ## 相关文件
 
 - 字段规则全文：[`../AGENTS.md`](../AGENTS.md) §7
-- 分类体系：[`../synthesis/taxonomy.md`](../synthesis/taxonomy.md)
+- 五轴定义：[`../notes/AXES.md`](../notes/AXES.md)
 - PDF 下载脚本：[`../scripts/fetch_pdfs.py`](../scripts/fetch_pdfs.py)

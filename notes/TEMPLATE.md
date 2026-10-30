@@ -23,7 +23,7 @@ code_url: ""                      # 代码仓库，无则留空并注明"未公�
 read_status: deep                 # 🔴 skim | deep
 read_date: 2026-XX-XX
 
-# ── 五轴分类（取值见 ../synthesis/taxonomy.md）──
+# ── 五轴分类（取值见 ../notes/AXES.md）──
 axis_a_object: []                 # 🔴 prompt|control-flow|code|tool|memory|evaluator|context
 axis_b_signal: []                 # 🔴 self-preference|external-verifier|human|failure-trajectory
 axis_c_search: []                 # 🔴 refine|evolutionary|textual-gradient|tree-search|meta-optimizer
@@ -126,6 +126,6 @@ reproducible: unknown             # true|false|unknown
 
 ## 相关文件
 
-- 分类轴取值：[`../synthesis/taxonomy.md`](../synthesis/taxonomy.md)
+- 分类轴取值：[`AXES.md`](AXES.md)
 - 完整工作契约：[`../AGENTS.md`](../AGENTS.md)
 - 泛读流程：[`README.md`](README.md)

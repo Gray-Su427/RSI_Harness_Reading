@@ -1,10 +1,14 @@
-# 分类体系（五轴，待验证）
+# 五轴分类定义（笔记 Schema 的唯一副本）
 
-> ⚠️ **状态：工作假设，尚未定稿。**
+> **状态：工作假设，尚未定稿。**
 >
-> 这五轴是本组自己提出的，**不是既有共识**。精读阶段的任务之一就是**用论文推翻或修正它**。
+> 本文件只负责**枚举值与填写规则**，是 `notes/deep/` 与 `refs/verified.csv` 中
+> `axis_*` 字段的唯一依据。
 >
-> **判定该轴是否成立的标准**：
+> 分类结果的论证、分布分析与研究空白在写作仓库的 `group/taxonomy.md` 中，
+> 不在本文件重复。
+>
+> **判定某轴是否成立的标准**：
 > - 某轴无法覆盖 **≥80%** 的精读论文 → 该轴有问题
 > - 某轴需要塞进大量 `other` 才能容纳 → 该轴粒度不对
 > - 某两轴高度相关（无法独立赋值）→ 考虑合并
@@ -15,7 +19,7 @@
 
 ## 选轴的思路
 
-分类体系要服务于两个用途：
+分类体系要服务两个用途：
 
 1. **描述**——这批工作彼此在哪些方面不同
 2. **诊断**——能否看出趋势、空白、或争议集中在哪里
@@ -50,7 +54,7 @@
 - 次要值追加，用列表形式保存
 - **不要**为了"纯粹"而强行归入单值
 
-**归类冲突本身就是分类体系的诊断信号**——若某篇频繁触发冲突，记入待核实项。
+**归类冲突本身就是分类体系的诊断信号**——若某篇频繁触发冲突，记入笔记第 9 节。
 
 ---
 
@@ -141,41 +145,7 @@ SEVerA（`arxiv-2603.25111`）提供形式化安全保证，多数工作只做�
 ### 📌 填写规则
 
 - 找不到作者的自我界定 → 填 `unknown`，记入笔记第 9 节，**不要替作者下结论**
-- 这一轴**必须**附作者原话佐证（`AGENTS.md` Gate 2 要求）
-
----
-
-## 分类总表（待填充）
-
-精读阶段完成后，用此表呈现分类结果。
-
-| 论文 ID | A 改进对象 | B 信号 | C 搜索 | D 保证 | E 递归 | 工业界 |
-|---|---|---|---|---|---|---|
-| `arxiv-2310.02304` STOP | code | external-verifier | refine; evolutionary | empirical | one-shot | — |
-| `arxiv-2408.08435` ADAS | control-flow; code | external-verifier | tree-search | empirical | one-shot | — |
-| `arxiv-2504.15228` SICA | code | failure-trajectory | evolutionary | empirical | iterative | — |
-| `arxiv-2505.22954` DGM | code; evaluator | external-verifier | evolutionary | empirical | **full-rsi** | ✅ |
-| `arxiv-2506.13131` AlphaEvolve | code | external-verifier | evolutionary | empirical | one-shot | ✅ |
-| `arxiv-2608.07645` MGM | code | — | evolutionary | empirical | iterative | — |
-| `arxiv-2606.05922` RHO | prompt; control-flow; tool | **self-preference** | — | — | iterative | — |
-| `arxiv-2603.25111` SEVerA | code; control-flow | external-verifier | — | **formal-safety** | — | — |
-| `arxiv-2607.15524` | context | — | — | — | co-evolution | — |
-
-> **留空的格子 = 尚未精读，不是"无"。**
-> 每完成一篇精读就补一行；精读完成后重新审视这张表——若某列几乎全空，该轴可能该删。
-
----
-
-## 后续待扩展的方向
-
-以下子领域尚未纳入样本，扩池时补齐：
-
-- 提示 / 系统提示自优化（OPRO、Self-Refine 谱系）
-- 工具自创建与自选择
-- 记忆与技能库自进化（Voyager 谱系）
-- 多智能体拓扑搜索（AFlow、GPTSwarm 系）
-- LLM 驱动的进化搜索（EvoPrompt 系）
-- 自进化 agent 的安全与对齐
+- 这一轴**必须**附作者原话佐证（`TEMPLATE.md` 与 Gate 2 要求）
 
 ---
 
@@ -183,12 +153,14 @@ SEVerA（`arxiv-2603.25111`）提供形式化安全保证，多数工作只做�
 
 | 日期 | 改动 | 原因 |
 |---|---|---|
-| 2026-10-12 | 从 `AGENTS.md` §5 迁出，建立五轴初稿 | 立项 |
+| 2026-10-12 | 建立五轴初稿 | 立项 |
+| 2026-10-30 | 从 `synthesis/taxonomy.md` 拆出，作为笔记 Schema 的唯一副本 | 仓库拆分：阅读仓只保留轴定义，论证移到写作仓 |
 
 ---
 
 ## 相关文件
 
-- Schema 中对应字段：[`../notes/TEMPLATE.md`](../notes/TEMPLATE.md)
-- 候选争议：[`open-questions.md`](open-questions.md)
+- 笔记模板：[`TEMPLATE.md`](TEMPLATE.md)
+- 阅读流程：[`README.md`](README.md)
 - 论文元数据：[`../refs/verified.csv`](../refs/verified.csv)
+- 分类结果与论证：写作仓库 `group/taxonomy.md`

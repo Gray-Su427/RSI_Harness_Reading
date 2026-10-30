@@ -80,7 +80,7 @@ read_date: 2026-XX-XX
 ### 泛读产出
 
 - `skim/` 卡片 ≥ **15** 篇
-- `../README.md` 中写出领域地图与选题边界
+- 写作仓库 `group/domain-map.md` 中写出领域地图与选题边界
 - `../refs/pool.csv` 中每条的 arXiv ID 均已核验
 
 ---
@@ -103,7 +103,7 @@ Schema 见 [`TEMPLATE.md`](TEMPLATE.md)，🔴 标记为必填。
 ### 精读产出
 
 - 完整 Schema 笔记 **≥5** 篇
-- 方法比较表（见 `../synthesis/evidence.md` 的表头设计）
+- 方法比较表（见写作仓库 `group/evidence.md` 的表头设计）
 - 分类体系每条轴都有 **≥2 篇**论文作为例证
 
 ---
@@ -115,8 +115,8 @@ Schema 见 [`TEMPLATE.md`](TEMPLATE.md)，🔴 标记为必填。
 | 新论文入库 | `../refs/pool.csv` → 通过核验后 `../refs/verified.csv` |
 | 完成 skim | CSV 的 `read_status` → `skim` |
 | 完成 deep | CSV 的 `read_status` → `deep`，补齐全部 `axis_*` 字段 |
-| 发现新争议 | `../synthesis/open-questions.md` |
-| 修改分类轴 | `../synthesis/taxonomy.md` 的**修订记录表**（必填） |
+| 发现新争议 | 写作仓库 `group/open-questions.md` |
+| 修改分类轴 | `AXES.md` 的**修订记录表**（必填） |
 | 下载 PDF | `python ../scripts/fetch_pdfs.py` |
 
 ---
@@ -124,5 +124,6 @@ Schema 见 [`TEMPLATE.md`](TEMPLATE.md)，🔴 标记为必填。
 ## 相关文件
 
 - Schema 模板：[`TEMPLATE.md`](TEMPLATE.md)
+- 五轴定义：[`AXES.md`](AXES.md)
 - 工作契约：[`../AGENTS.md`](../AGENTS.md) §4
 - 质量门禁：[`../AGENTS.md`](../AGENTS.md) §6
