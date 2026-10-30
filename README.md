@@ -50,10 +50,10 @@ RSI 研究通常分三个层次：
 |---|---|---|---|
 | 第一次课 | 泛读卡片 ≥15 篇 | ✅ 17 篇 | `notes/skim/` |
 | 第一次课 | 两篇种子综述 | ⬜ 未补 | 需自行检索 arXiv ID |
-| 第一次课 | 领域地图 + 选题边界 | ⬜ 未开始 | 写作仓库 `group/domain-map.md` |
+| 第一次课 | 领域地图 + 选题边界 | 🟡 骨架 | 写作仓库 `group/domain-map.md` |
 | 第二次课 | 精读笔记 ≥5 篇 | ⬜ 0 篇 | `notes/deep/` |
 | 第二次课 | 方法比较表 | ⬜ 未开始 | 写作仓库 `group/evidence.md` |
-| 第二次课 | 分类体系 | ⬜ 初稿 | 写作仓库 `group/taxonomy.md` |
+| 第二次课 | 分类体系 | 🟡 初稿 | 写作仓库 `group/taxonomy.md` |
 | 全程 | venue 核验 | ⬜ 0/17 | `refs/verified.csv` |
 
 ### 硬指标自检（第二次课）
