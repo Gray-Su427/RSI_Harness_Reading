@@ -20,12 +20,13 @@
 
 | CP | 状态 | 负责人 | 说明 |
 |---|---|---|---|
-| CP0 | 🟡 进行中 | P3（szh） | 姓名已填；待全员确认任务与 Q&A |
+| CP0 | ✅ 通过（2026-10-31） | P3（szh） | 姓名已填；全员已确认认领；Q&A 答复待确认 |
 | CP1 | ⬜ 未开始 | P1（xyc） | 种子综述、venue、统计、漏斗 |
 | CP2 | ⬜ 未开始 | P2（zyc） | 五轴表、分类总表、A×E 图 |
 | CP3 | ⬜ 未开始 | P3（szh） + P4（zgj） | 7 篇名单、排期、4 风险、8 Q&A |
 | CP4 | ⬜ 未开始 | P3（szh） | 最终一致性校对 |
 
+> 2026-10-31：P1（xyc）、P2（zyc）、P3（szh）、P4（zgj）已确认认领各自任务（P3 记录）。
 > 状态以 [`../midpre-checkpoint.md`](../midpre-checkpoint.md) 为准；本表只是快照。
 
 ---
@@ -40,7 +41,7 @@
 | [`p4/risk.md`](p4/risk.md) | 四项风险 + 进程风险补充 | P4（zgj） | 初稿 |
 | [`p4/qa.md`](p4/qa.md) | 8 个 Q&A（约 20 秒/条） | P4（zgj）代拟 | 待四人确认 |
 | [`p4/p4-paper-brief.md`](p4/p4-paper-brief.md) | P4 论文五问准备卡 | P4（zgj） | 讲述级 |
-| [`../midpre-checkpoint.md`](../midpre-checkpoint.md) | 分工与 CP 看板（仓库根目录） | P3（szh） | 🟡 |
+| [`../midpre-checkpoint.md`](../midpre-checkpoint.md) | 分工与 CP 看板（仓库根目录） | P3（szh） | 🟡（CP0 ✅，CP1—CP4 待办） |
 
 ---
 
@@ -48,9 +49,9 @@
 
 - [ ] P1—P3 各提交 2 张讲述级五问卡（P4 已交 1 张）。
 - [ ] P3（szh）确认 T 与四人实际可用时间，并校准 D1—D14。
-- [ ] 四人各确认两条 Q&A；P3（szh）审阅计划与 deck 口径。
+- [ ] 四人各确认两条 Q&A 答复；P3（szh）审阅计划与 deck 口径。
 - [ ] CP1／CP2 冻结后再启动 D1—D14；CP1 未闭环先补 venue 与两篇种子综述。
-- [ ] 更新 [`../midpre-checkpoint.md`](../midpre-checkpoint.md) 的 CP 状态与日期。
+- [ ] CP1—CP4 状态变化时更新 [`../midpre-checkpoint.md`](../midpre-checkpoint.md) 的状态与日期。
 
 ---
 
