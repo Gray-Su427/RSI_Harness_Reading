@@ -51,6 +51,7 @@ RSI 研究通常分三个层次：
 | 第一次课 | 泛读卡片 ≥15 篇 | ✅ 17 篇 | `notes/skim/` |
 | 第一次课 | 两篇种子综述 | ⬜ 未补 | 需自行检索 arXiv ID |
 | 第一次课 | 领域地图 + 选题边界 | 🟡 骨架 | 写作仓库 `group/domain-map.md` |
+| 中期汇报 | 7 篇名单、排期、风险、8 个 Q&A | 🟡 CP3 预备 | `midterm/` |
 | 第二次课 | 精读笔记 ≥5 篇 | ⬜ 0 篇 | `notes/deep/` |
 | 第二次课 | 方法比较表 | ⬜ 未开始 | 写作仓库 `group/evidence.md` |
 | 第二次课 | 分类体系 | 🟡 初稿 | 写作仓库 `group/taxonomy.md` |
@@ -91,6 +92,8 @@ RSI 研究通常分三个层次：
 ├── AGENTS.md          🔴 工作契约：阅读流程、Schema、质量门禁、AI 红线
 ├── README.md          ← 你在这里
 ├── .gitignore
+│
+├── midterm/           中期汇报材料（README.md 为索引，按 p1/p2/p3/p4 分目录）
 │
 ├── refs/              文献元数据
 │   ├── verified.csv   已核验论文（17 篇）

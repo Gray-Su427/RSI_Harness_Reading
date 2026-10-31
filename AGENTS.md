@@ -58,6 +58,8 @@ RSI_Harness_Reading/
 ├── README.md              ← 项目说明 + 进度看板
 ├── .gitignore
 │
+├── midterm/               中期汇报材料（README.md 为索引，按 p1/p2/p3/p4 分目录）
+│
 ├── refs/                  文献元数据（唯一数据源）
 │   ├── README.md          ← 字段说明
 │   ├── verified.csv       ← 已核验论文（17 篇，venue_verified 全为 false）
