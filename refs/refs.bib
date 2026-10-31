@@ -1,12 +1,14 @@
 % =====================================================================
 % refs/refs.bib — 自动生成的引导版本
 %
-% 生成时间: 2026-10-12   数据源: refs/verified.csv（17 篇）
+% 生成时间: 2026-10-12（2026-10-31 P1/xyc 补 2 条并更新 4 篇 seed 的 venue 状态）
+% 数据源: refs/verified.csv（19 篇）
 % 生成方式: 手工构造，字段与 verified.csv 严格对应
 %
 % ⚠️ 重要说明:
-%   本文件的所有 venue 均为【未核验】状态。多数直接抄自课程 PPT，
-%   属于二手信息。经 DBLP / OpenReview 核验后请更新 verified.csv 并同步此处。
+%   19 条中仅 4 条的 venue 已核验（STOP=COLM 2024、ADAS=ICLR 2025、
+%   DGM=ICLR 2026、Gao 综述=TMLR 2026），其余 15 条为 preprint，见 verified.csv
+%   的 venue_verified 列。核验来源写在各自 note 与 midterm/p1/venue-verification.md。
 %   note 字段中的 "(unverified)" 标记，核验通过后应删除。
 %
 %   按 AGENTS.md §7.4，本文件最终应由 Zotero 管理导出。
@@ -23,7 +25,7 @@
   archivePrefix= {arXiv},
   primaryClass = {cs.LG},
   url          = {https://arxiv.org/abs/2310.02304},
-  note         = {Venue per course slides: COLM 2024 (unverified)}
+  note         = {COLM 2024 (Spotlight); verified via colmweb.org/2024/AcceptedPapers.html, 2026-10-31}
 }
 
 @misc{hu2024adas,
@@ -34,7 +36,7 @@
   archivePrefix= {arXiv},
   primaryClass = {cs.LM},
   url          = {https://arxiv.org/abs/2408.08435},
-  note         = {Venue per course slides: ICLR 2025 (unverified)}
+  note         = {ICLR 2025 (Conference); verified via proceedings.iclr.cc, 2026-10-31}
 }
 
 @misc{robeyns2025sica,
@@ -45,7 +47,7 @@
   archivePrefix= {arXiv},
   primaryClass = {cs.SE},
   url          = {https://arxiv.org/abs/2504.15228},
-  note         = {Venue not specified on course slides (unverified)}
+  note         = {arXiv comment says submitted to NeurIPS 2025, not accepted; no OpenReview record found (unverified)}
 }
 
 @misc{zhang2025dgm,
@@ -56,7 +58,7 @@
   archivePrefix= {arXiv},
   primaryClass = {cs.NE},
   url          = {https://arxiv.org/abs/2505.22954},
-  note         = {Venue per course slides: ICLR 2026 (unverified). Sakana AI}
+  note         = {ICLR 2026 (Conference); verified via proceedings.iclr.cc, 2026-10-31. Sakana AI}
 }
 
 % ---------- 直接命中 Harness 自进化 (role=harness-core) ----------
@@ -183,4 +185,27 @@
   eprint       = {2607.07663},
   archivePrefix= {arXiv},
   url          = {https://arxiv.org/abs/2607.07663}
+}
+
+% ---------- 课程指定种子综述（2026-10-31 P1/xyc 补入）----------
+
+@article{gao2026selfevolving,
+  title        = {A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence},
+  author       = {Gao, Huan-ang and Geng, Jiayi and Hua, Wenyue and Hu, Mengkang and others},
+  journal      = {Transactions on Machine Learning Research},
+  year         = {2026},
+  eprint       = {2507.21046},
+  archivePrefix= {arXiv},
+  url          = {https://arxiv.org/abs/2507.21046},
+  note         = {TMLR 2026; reviewed on OpenReview (forum CTr3bovS5F); arXiv v1 2025-07-28, v4 2026-01-16}
+}
+
+@misc{zou2026dcri,
+  title        = {Data-Centric Recursive Improvement for Foundation Models: A Survey},
+  author       = {Zou, Yanyan and Chen, Chao and Kwok, Tung Sum Thomas and Yang, Jiayu and others},
+  year         = {2026},
+  howpublished = {Preprints.org},
+  doi          = {10.20944/preprints202609.0154},
+  url          = {https://www.preprints.org/manuscript/202609.0154},
+  note         = {No arXiv version (arXiv title search returns 0 hits); preprints.org, not peer reviewed; OpenReview forum zGqv8Jsh4Y; companion repo zoezou2015/Awesome-Data-Centric-Recursive-Improvement}
 }
