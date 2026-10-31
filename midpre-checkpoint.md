@@ -30,7 +30,7 @@
 |---|---|---|---|---|---|
 | **CP0** | 分工确认 | P3（szh） | 立刻 | ✅ 通过 | 2026-10-31 |
 | **CP1** | 数据冻结 | P1（xyc） | 汇报前 2 天 | ⬜ 未开始 |  |
-| **CP2** | 体系冻结 | P2（zyc） | 汇报前 2 天 | ⬜ 未开始 |  |
+| **CP2** | 体系冻结 | P2（zyc） | 汇报前 2 天 | 🟡 P2 已交，待评审 | 2026-10-31 提交 |
 | **CP3** | 叙事与计划冻结 | P3（szh） + P4（zgj） | 汇报前 1 天 | ⬜ 未开始 |  |
 | **CP4** | 最终校对 | P3（szh） | 汇报当天 | ⬜ 未开始 |  |
 
@@ -80,16 +80,16 @@
 
 ### 负责工作
 
-- [ ] 把 `notes/AXES.md` 压缩成 5 行五轴速览表
-- [ ] 填分类总表：7–9 篇核心论文，空格标「待精读」
-- [ ] 画 **A×E 体系图**
+- [x] 把 `notes/AXES.md` 压缩成 5 行五轴速览表 → [`midterm/p2/axes-overview.md`](midterm/p2/axes-overview.md)
+- [x] 填分类总表：7–9 篇核心论文，空格标「待精读」 → [`midterm/p2/classification.md`](midterm/p2/classification.md)（9 篇）
+- [x] 画 **A×E 体系图** → [`midterm/p2/taxonomy-ae.png`](midterm/p2/taxonomy-ae.png) / [`taxonomy-ae.svg`](midterm/p2/taxonomy-ae.svg)
   - 横轴：A 改进对象（prompt / control-flow / code / tool / memory / evaluator / context）
   - 纵轴：E 递归深度（one-shot / iterative / full-rsi / co-evolution）
-  - 点：7–9 篇核心论文，不要 17 篇全标
+  - 点：7–9 篇核心论文，不要 17 篇全标（9 个点）
   - 颜色：工业界 / 学术界
   - 标注：DGM、STOP、RHO、SEVerA
-  - 空格：写「待精读」，不要猜
-- [ ] 写 2–3 条初步发现：密集区、空白、反例
+  - 空格：写「待精读」，不要猜（5 篇置于底部灰带）
+- [x] 写 2–3 条初步发现：密集区、空白、反例 → [`midterm/p2/findings.md`](midterm/p2/findings.md)
 
 ### 认领论文
 
@@ -102,10 +102,14 @@
 
 ### 交付物
 
-- 五轴速览表
-- 分类总表
-- `taxonomy-ae` 图
+- 五轴速览表 → `midterm/p2/axes-overview.md`
+- 分类总表（9 篇）→ `midterm/p2/classification.md`
+- `taxonomy-ae` 图 → `midterm/p2/taxonomy-ae.png` / `.svg`；说明见 `taxonomy-ae.md`
 - `findings.md`：3 条判断，每条一句话
+- P2 认领论文五问卡 → `dgm-brief.md`、`alphaevolve-brief.md`
+- 交付索引与口径 → `midterm/p2/README.md`
+
+> **给 P3 的口径提醒**：E 轴 5/9 待精读，不能写「递归深度集中在 `one-shot` / `iterative`」；能落位的 3 篇分别落在 `one-shot`、`iterative`、`full-rsi`。详见 `midterm/p2/README.md` §3。
 
 ### 交给
 
@@ -243,6 +247,7 @@ P1 ──元数据──→ P2
 | 2026-10-30 | 建立分工与 Checkpoint | 中期汇报准备 |
 | 2026-10-31 | 填入四人姓名（xyc / zyc / szh / zgj）；同步 P4 计划与风险文件 | CP0 姓名确认 |
 | 2026-10-31 | CP0 通过：全员确认认领任务 | P3（szh）记录 |
+| 2026-10-31 | CP2 工作稿提交：五轴表、9 篇分类表、A×E 图、3 条发现、DGM/AlphaEvolve 五问卡；CP2 置 🟡 待评审 | P2（zyc）完成 CP2 交付 |
 
 ---
 

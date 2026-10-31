@@ -54,7 +54,7 @@ RSI 研究通常分三个层次：
 | 中期汇报 | 7 篇名单、排期、风险、8 个 Q&A | 🟡 CP3 预备 | `midterm/` |
 | 第二次课 | 精读笔记 ≥5 篇 | ⬜ 0 篇 | `notes/deep/` |
 | 第二次课 | 方法比较表 | ⬜ 未开始 | 写作仓库 `group/evidence.md` |
-| 第二次课 | 分类体系 | 🟡 初稿 | 写作仓库 `group/taxonomy.md` |
+| 第二次课 | 分类体系 | 🟡 CP2 工作稿（P2 已交，待评审） | `midterm/p2/`；论证版在写作仓库 `group/taxonomy.md` |
 | 全程 | venue 核验 | ⬜ 0/17 | `refs/verified.csv` |
 
 ### 硬指标自检（第二次课）
@@ -156,4 +156,4 @@ python scripts/fetch_pdfs.py
 
 ---
 
-*最后更新：2026-10-30*
+*最后更新：2026-10-31*
