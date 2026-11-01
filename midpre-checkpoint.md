@@ -20,7 +20,12 @@
 | **P3** | szh | 边界、叙事与整合 | 领域地图、3 句叙事、6 页 deck |
 | **P4** | zgj | 精读计划与风险 | 7 篇名单、排期、风险清单、Q&A |
 
-> CP0 记录：2026-10-31 姓名已填（xyc / zyc / szh / zgj）；全员已确认认领各自任务（P3／szh 记录）；Q&A 答复仍待确认。
+> CP0 记录：2026-10-31 姓名已填（xyc / zyc / szh / zgj）；全员已确认认领各自任务（P3／szh 记录）。
+> CP1 记录（2026-11-01）：19 篇入库、4 篇 venue 已核验、统计与漏斗齐，P3 验收通过。
+> CP2 记录（2026-11-01）：P2 交付 9 篇分类表、A×E 图、3 条发现、2 张五问卡，P3 评审通过并冻结。
+> CP3 记录（2026-11-01）：P3 交付叙事、6 页 deck、RHO/SEVerA 五问卡、CP4 清单；Q&A 已确认 2/8。
+> T 记录（2026-11-01）：**汇报日 T = 2026-11-02（周一）**；CP4 当天上午执行；D1–D14 = **2026-11-03 – 11-16**（D1 = T+1）。
+> 时长口径（2026-11-01）：中期汇报 **5 分钟（≤4:40）**；课程 PPT 的 10 分钟版用于第三次课。
 
 ---
 
@@ -29,10 +34,10 @@
 | CP | 名称 | 负责人 | 建议时点 | 状态 | 完成日期 |
 |---|---|---|---|---|---|
 | **CP0** | 分工确认 | P3（szh） | 立刻 | ✅ 通过 | 2026-10-31 |
-| **CP1** | 数据冻结 | P1（xyc） | 汇报前 2 天 | ⬜ 未开始 |  |
-| **CP2** | 体系冻结 | P2（zyc） | 汇报前 2 天 | 🟡 P2 已交，待评审 | 2026-10-31 提交 |
-| **CP3** | 叙事与计划冻结 | P3（szh） + P4（zgj） | 汇报前 1 天 | ⬜ 未开始 |  |
-| **CP4** | 最终校对 | P3（szh） | 汇报当天 | ⬜ 未开始 |  |
+| **CP1** | 数据冻结 | P1（xyc） | 汇报前 2 天 | ✅ 通过 | 2026-11-01（P3 验收） |
+| **CP2** | 体系冻结 | P2（zyc） | 汇报前 2 天 | ✅ 通过 | 2026-11-01（P3 评审） |
+| **CP3** | 叙事与计划冻结 | P3（szh） + P4（zgj） | 汇报前 1 天 | 🟡 材料已齐，待 Q&A 确认 | 2026-11-01 提交 |
+| **CP4** | 最终校对 | P3（szh） | **2026-11-02 上午** | 🟡 清单已建，当天执行 | 2026-11-01（清单） |
 
 状态说明：`⬜ 未开始` / `🟡 进行中` / `✅ 通过` / `❌ 退回`
 
@@ -42,13 +47,11 @@
 
 ### 负责工作
 
-- [ ] 补两篇种子综述：检索、核验 arXiv ID、入 `refs/pool.csv`、做 skim 卡
-  - *A Survey of Self-Evolving Agents*（2026）
-  - *Data-Centric Recursive Improvement for Foundation Models*（2026）
-- [ ] 核验 4 篇 seed 的 venue：STOP、ADAS、DGM、SICA
-- [ ] 维护 `refs/verified.csv` 的 `year` / `venue` / `industry` / `role` 字段
-- [ ] 做 17 + 2 篇结构统计：年份、venue、industry、role 四个分布
-- [ ] 做筛选漏斗：检索 → 19 核验 → 19 skim → 7 精读候选
+- [x] 补两篇种子综述：检索、核验 arXiv ID、入 `refs/pool.csv`、做 skim 卡 → [`midterm/p1/venue-verification.md`](midterm/p1/venue-verification.md) §3、`notes/skim/`
+- [x] 核验 4 篇 seed 的 venue：STOP、ADAS、DGM、SICA → 3 篇 `true`、SICA 为 preprint（[`midterm/p1/venue-verification.md`](midterm/p1/venue-verification.md) §1）
+- [x] 维护 `refs/verified.csv` 的 `year` / `venue` / `industry` / `role` 字段 → 19 行，`venue_verified` 4 篇 `true`
+- [x] 做 17 + 2 篇结构统计：年份、venue、industry、role 四个分布 → [`midterm/p1/stats.md`](midterm/p1/stats.md)
+- [x] 做筛选漏斗：检索 → 19 核验 → 19 skim → 7 精读候选 → [`midterm/p1/funnel.md`](midterm/p1/funnel.md)
 
 ### 认领论文
 
@@ -125,13 +128,17 @@
 
 ### 负责工作
 
-- [ ] 填领域地图：RSI 定义、三层定位、纳入/不纳入、2023–2026 时间线
-- [ ] 写 **3 句叙事线**（草稿，可改）：
-  1. **现状**：Harness 自进化在 2026 年明显加速，但目前只有 DGM 明确宣称改进了「改进器本身」。
-  2. **缺口**：递归深度集中在 `one-shot` / `iterative`，验证信号以 `external-verifier` 为主，`self-preference` 只有 RHO。
-  3. **计划**：用 7 篇精读验证「递归深度是否被高估、验证独立性是否被低估」，形成 3 条证据和 2–3 个争议。
-- [ ] 合并 6 页 deck，检查数字、论文 ID、轴标签、术语一致性
-- [ ] 组织全员做一次最终校对
+- [x] 填领域地图：RSI 定义、三层定位、纳入/不纳入、2023–2026 时间线 → 写作仓库 `group/domain-map.md`（中期定稿）
+- [x] 写 **3 句叙事线** → [`midterm/p3/narrative.md`](midterm/p3/narrative.md)（定稿候选，已按 P2 口径修正）：
+  1. **现状**：19 篇入库文献中 **12 篇（63%）** 出自 2026，但 2026 年的 12 篇中 **0 篇**有可核验录用记录；4/19 有录用，且全是 2023–2025 的工作。
+  2. **缺口**：9 篇核心样本中「改什么」已有共识（主 A 值 `code` **6/9**），但 E 轴**大面积未界定**——仅 3 篇可落位（STOP=`iterative`、DGM=`full-rsi` 仅代码层、RHO=`one-shot`），5 篇待精读；`co-evolution` / `evaluator` / `context` 三个格点为 0，`formal-safety` 只有 SEVerA，`self-preference` 只有 RHO（作者自报最偏好 0.78 ≠ 测试最高 0.85）。
+  3. **计划**：用 7 篇精读（2/2/2/1，D1–D14）验证「递归深度是否被高估、验证独立性是否被低估」，形成 3 条证据和 2–3 个争议。
+- [x] 合并 6 页 deck，检查数字、论文 ID、轴标签、术语一致性 → [`midterm/p3/deck-rsi-midterm.pptx`](midterm/p3/deck-rsi-midterm.pptx)（6 页正文 + 2 页 backup，280 s）、[`deck-outline.md`](midterm/p3/deck-outline.md)、[`make_deck.py`](midterm/p3/make_deck.py)
+- [x] 组织全员做一次最终校对 → 清单 [`midterm/p3/cp4-checklist.md`](midterm/p3/cp4-checklist.md)；Q&A 状态 [`qa-signoff.md`](midterm/p3/qa-signoff.md)（2/8 已确认）
+
+> ⚠️ 旧草稿的「递归深度集中在 `one-shot` / `iterative`」**已作废**：能落位的只有 3 篇，分属三档；5 篇无作者自我界定。deck 与报告一律用上面的第 2 句。
+>
+> 🗓 时间点已定：T = **2026-11-02**；D1–D14 = **2026-11-03 – 11-16**；排练截止 11-01 晚，CP4 在 11-02 上午。
 
 ### 认领论文
 
@@ -142,10 +149,10 @@
 
 ### 交付物
 
-- 领域地图
-- `narrative.md`：3 句话
-- `deck`：6 页
-- 一致性校对清单
+- 领域地图 → 写作仓库 `group/domain-map.md`（✅ 中期定稿）
+- `narrative.md`：3 句话 → [`midterm/p3/narrative.md`](midterm/p3/narrative.md)（✅）
+- `deck`：6 页 → [`midterm/p3/deck-rsi-midterm.pptx`](midterm/p3/deck-rsi-midterm.pptx)（✅ 6 页正文 + 2 页 backup，280 s）
+- 一致性校对清单 → [`midterm/p3/cp4-checklist.md`](midterm/p3/cp4-checklist.md)（✅ 待当天执行）
 
 ### 交给
 
@@ -161,14 +168,14 @@
 
 ### 负责工作
 
-- [ ] 定 7 篇精读名单（见下表）
-- [ ] 做 2/2/2/1 分工 + 两周排期
-- [ ] 写风险清单：
-  - venue 未核验
-  - 算力成本未报告
-  - 复现性差
-  - 两篇种子综述待补
-- [ ] 汇总 8 个 Q&A：全员各供 2 个，P4 合并成一页
+- [x] 定 7 篇精读名单（见下表）→ [`midterm/p4/plan.md`](midterm/p4/plan.md) §2
+- [x] 做 2/2/2/1 分工 + 两周排期 → [`midterm/p4/plan.md`](midterm/p4/plan.md) §3（D1 待 T 确认）
+- [x] 写风险清单：
+  - venue 未核验（R1，已由 CP1 关闭）
+  - 算力成本未报告（R2，仍开放）
+  - 复现性差（R3，仍开放）
+  - 两篇种子综述待补（R4，已由 CP1 关闭）
+- [x] 汇总 8 个 Q&A：全员各供 2 个，P4 合并成一页 → [`midterm/p4/qa.md`](midterm/p4/qa.md)（**2/8 已确认**，见 [`midterm/p3/qa-signoff.md`](midterm/p3/qa-signoff.md)）
 
 ### 认领论文
 
@@ -190,9 +197,9 @@
 
 ### 交付物
 
-- `plan.md`：7 篇名单 + 分工 + 两周排期
-- `risk.md`：4 条风险 + 应对
-- `qa.md`：8 个问题 + 20 秒答案
+- `plan.md`：7 篇名单 + 分工 + 两周排期（✅ 2026-11-01 补 T=11-02、D1–D14=11-03 – 11-16）
+- `risk.md`：4 条风险 + 应对（✅ 2026-11-01 R1/R4 关闭，R2/R3 仍开放）
+- `qa.md`：8 个问题 + 20 秒答案（🟡 2/8 已确认；Q1/Q2 已按 CP1 结果改写）
 
 ### 交给
 
@@ -248,6 +255,11 @@ P1 ──元数据──→ P2
 | 2026-10-31 | 填入四人姓名（xyc / zyc / szh / zgj）；同步 P4 计划与风险文件 | CP0 姓名确认 |
 | 2026-10-31 | CP0 通过：全员确认认领任务 | P3（szh）记录 |
 | 2026-10-31 | CP2 工作稿提交：五轴表、9 篇分类表、A×E 图、3 条发现、DGM/AlphaEvolve 五问卡；CP2 置 🟡 待评审 | P2（zyc）完成 CP2 交付 |
+| 2026-11-01 | CP1 验收通过：19 篇入库、4 篇 venue 核验、统计/漏斗/data brief、STOP/ADAS 卡齐 | P1 交付完成，P3 验收 |
+| 2026-11-01 | CP2 评审通过并冻结：9 篇分类、A×E 图、3 条发现均可用；E 轴按 P2 口径修正 | P3 评审 |
+| 2026-11-01 | CP3 材料提交：叙事 3 句、6 页 deck（pptx + 脚本 + 大纲）、RHO/SEVerA 五问卡、CP4 清单、Q&A 确认表 | P3（szh）完成 CP3 交付；Q&A 2/8 已确认 |
+| 2026-11-01 | 汇报时长定为 5 分钟（≤4:40）；10 分钟版留给第三次课 | P3 决断，避免两套计时混用 |
+| 2026-11-01 | 汇报日 T 确定为 **2026-11-02**；D1–D14 映射为 11-03 – 11-16；CP4 置「当天上午执行」 | 时间点确认 |
 
 ---
 
