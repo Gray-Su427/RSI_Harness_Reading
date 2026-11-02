@@ -88,7 +88,7 @@
 | 2 篇种子综述入库 | ✅ 已入 `refs/pool.csv` 与 `refs/verified.csv`（19 条） |
 | 4 篇 seed venue 有结论 | ✅ 3 篇 `true` + 1 篇 `false`，证据可点击 |
 | 19 篇统计与 CSV 一致 | ✅ 见 [`stats.md`](stats.md)，由脚本对 CSV 直接计数 |
-| 漏斗数字对得上 | ✅ 见 [`funnel.md`](funnel.md) |
+| 流程图各阶段数字对得上 | ✅ 见 [`screening-flow.md`](screening-flow.md) |
 
 ## 5. 未闭环项（移交）
 

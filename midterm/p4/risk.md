@@ -38,10 +38,10 @@
 
 ## R4 · 两篇种子综述（✅ 已关闭，2026-11-01）
 
-- **当前证据（2026-11-01 复核）**：两篇均已入库并完成 skim 卡——*A Survey of Self-Evolving Agents* → `arxiv-2507.21046`（TMLR 2026，`venue_verified: true`）；*Data-Centric Recursive Improvement for Foundation Models* → `venue-2026-dcri-survey`（arXiv 无版本，Preprints.org 预印本，`false`）。CSV 已由 17 篇扩到 **19 篇**，统计与漏斗同步更新。
-- **影响**：已消除“可能遗漏课程指定视角”的风险；漏斗从「拟补 2 篇」变为实际 19 篇。
+- **当前证据（2026-11-01 复核）**：两篇均已入库并完成 skim 卡——*A Survey of Self-Evolving Agents* → `arxiv-2507.21046`（TMLR 2026，`venue_verified: true`）；*Data-Centric Recursive Improvement for Foundation Models* → `venue-2026-dcri-survey`（arXiv 无版本，Preprints.org 预印本，`false`）。CSV 已由 17 篇扩到 **19 篇**，统计与筛选流程图同步更新。
+- **影响**：已消除“可能遗漏课程指定视角”的风险；筛选流程图从「拟补 2 篇」变为实际 19 篇。
 - **负责人**：P1（xyc）检索与入库；P3（szh）调整领域地图（已完成）；P4（zgj）跟踪对精读计划的影响（两篇均为综述，不进精读）。
-- **应对（已执行）**：核验精确条目与 ID、入 `refs/pool.csv`、补两张 skim 卡、同步 `verified.csv` 与漏斗；结论见 [`../p1/venue-verification.md`](../p1/venue-verification.md) §3 与 [`../p1/funnel.md`](../p1/funnel.md) §2。
+- **应对（已执行）**：核验精确条目与 ID、入 `refs/pool.csv`、补两张 skim 卡、同步 `verified.csv` 与筛选流程图；结论见 [`../p1/venue-verification.md`](../p1/venue-verification.md) §3 与 [`../p1/screening-flow.md`](../p1/screening-flow.md) §3。
 - **时限**：T−2 天 CP1（**已于 2026-11-01 闭环**）。
 - **降级口径（已不适用）**：原“已入库 17 篇，拟补 2 篇”作废，统一报 19 篇。
 - **退出条件（已满足）**：两篇均有可点击来源、合法 ID 与 skim 卡；统计与真实 CSV 一致（19 / 19 / 7）。
@@ -53,13 +53,13 @@
 | R1 venue 核验 | ✅ **已关闭** | 4 篇有可追溯来源；其余 15 篇一律写 preprint | P1（xyc） |
 | R2 成本未完整报告 | 🟡 仍开放 | 分列搜索／更新／推理成本；缺项不作效率结论 | P4（zgj）＋各阅读负责人 |
 | R3 复现性不足 | 🟡 仍开放 | 核实代码与日志；区分可访问、可运行、已复现 | 各阅读负责人，P4（zgj）汇总 |
-| R4 两篇种子综述 | ✅ **已关闭** | 已入库 19 篇、skim 19 篇；漏斗只报实际数量 | P1（xyc），P3（szh）同步地图 |
+| R4 两篇种子综述 | ✅ **已关闭** | 已入库 19 篇、skim 19 篇；流程图只报实际数量 | P1（xyc），P3（szh）同步地图 |
 
 ## 进程风险（补充，不计入四项）
 
 - **当前状态（2026-11-01）**：T = **2026-11-02**；CP0、CP1、CP2 已通过并冻结；CP3 材料已齐（8 条 Q&A 确认 2/8）；CP4 于 11-02 上午执行。D1–D14 = 11-03 – 11-16，可在 CP3 冻结后启动。
-- **工作量**：P1（xyc）同时承担 2 篇精读与 CP1 的统计/漏斗/venue；P3（szh）承担 2 篇精读与 CP0／CP3／CP4、deck 整合。排期无 buffer。
-- **应对**：先保证 CP4 与汇报，再按四人实际可用时间校准 D1–D14；若 P1 的 CP1 任务超时，优先由 P2（zyc）／P4（zgj）分担统计或漏斗，不挤占精读时间。
+- **工作量**：P1（xyc）同时承担 2 篇精读与 CP1 的统计/流程图/venue；P3（szh）承担 2 篇精读与 CP0／CP3／CP4、deck 整合。排期无 buffer。
+- **应对**：先保证 CP4 与汇报，再按四人实际可用时间校准 D1–D14；若 P1 的 CP1 任务超时，优先由 P2（zyc）／P4（zgj）分担统计或流程图，不挤占精读时间。
 
 **交接提示**：R1／R4 已关闭，R2／R3 仍开放；以上状态已同步 `midpre-checkpoint.md`（2026-11-01）。
 

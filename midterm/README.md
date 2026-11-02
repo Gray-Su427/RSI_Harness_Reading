@@ -21,13 +21,13 @@
 | CP | 状态 | 负责人 | 说明 |
 |---|---|---|---|
 | CP0 | ✅ 通过（2026-10-31） | P3（szh） | 姓名已填；全员已确认认领 |
-| CP1 | ✅ 通过（2026-11-01） | P1（xyc） | 19 篇入库、4 篇 venue 已核验、统计/漏斗/data brief 齐 |
+| CP1 | ✅ 通过（2026-11-01） | P1（xyc） | 19 篇入库、4 篇 venue 已核验、统计/筛选流程图/data brief 齐 |
 | CP2 | ✅ 通过（2026-11-01） | P2（zyc） | 9 篇分类表、A×E 图、3 条发现、2 张五问卡 |
 | CP3 | 🟡 材料已齐，待 Q&A 确认 | P3（szh） + P4（zgj） | 叙事、6 页 deck、7 篇名单、排期、4 风险、8 Q&A（2/8 已确认） |
 | CP4 | 🟡 清单已建，11-02 上午执行 | P3（szh） | 一致性校对清单已建；只查数字/ID/术语/计时 |
 
 > 2026-10-31：P1（xyc）、P2（zyc）、P3（szh）、P4（zgj）已确认认领各自任务（P3 记录）。
-> 2026-11-01：CP1 验收通过（venue 核验 4/19、19 篇统计、漏斗、data brief、STOP/ADAS 五问卡）；CP2 评审通过并冻结（P3 评审：E 轴按 P2 口径修正）。
+> 2026-11-01：CP1 验收通过（venue 核验 4/19、19 篇统计、筛选流程图、data brief、STOP/ADAS 五问卡）；CP2 评审通过并冻结（P3 评审：E 轴按 P2 口径修正）。
 > 2026-11-01：P3 交付叙事、6 页 deck（pptx）、RHO/SEVerA 五问卡、CP4 清单、Q&A 确认表（Q5/Q6 已确认）。
 > 2026-11-01：**汇报日确定为 2026-11-02（周一）**；CP4 当天上午执行，D1–D14 = 2026-11-03 – 11-16。
 > 2026-11-01：汇报时长按 **5 分钟（≤4:40）** 定稿；课程 PPT 的 10 分钟版留给第三次课，两者不混用。
@@ -43,7 +43,7 @@
 |---|---|---|---|
 | [`p1/venue-verification.md`](p1/venue-verification.md) | 4 篇 seed + 2 篇新增综述的 venue 核验结论与来源 | P1（xyc） | ✅ CP1 证据 |
 | [`p1/stats.md`](p1/stats.md) | 19 篇年份 / venue / industry / role 四张分布表 | P1（xyc） | ✅ |
-| [`p1/funnel.md`](p1/funnel.md) | 149 → 约 50 → 2 → 19 → 19 → 7 → 0 漏斗与检索日志 | P1（xyc） | ✅ |
+| [`p1/screening-flow.md`](p1/screening-flow.md) | 149 → 约 50 → 2 → 19 → 19 → 7 → 0 的筛选流程图与检索日志 | P1（xyc） | ✅ |
 | [`p1/data-brief.md`](p1/data-brief.md) | 3 个数字 + 1 个判断 | P1（xyc） | ✅ |
 | [`p1/paper-brief-stop.md`](p1/paper-brief-stop.md) | STOP 讲述级五问卡 | P1（xyc） | 讲述级 |
 | [`p1/paper-brief-adas.md`](p1/paper-brief-adas.md) | ADAS 讲述级五问卡 | P1（xyc） | 讲述级 |

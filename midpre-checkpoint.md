@@ -15,13 +15,13 @@
 
 | 代号 | 姓名 | 角色 | 主要交付 |
 |---|---|---|---|
-| **P1** | xyc | 数据与文献池 | 种子综述、venue 核验、结构统计、漏斗图 |
+| **P1** | xyc | 数据与文献池 | 种子综述、venue 核验、结构统计、筛选流程图 |
 | **P2** | zyc | 分类体系与图 | 五轴表、分类总表、A×E 体系图 |
 | **P3** | szh | 边界、叙事与整合 | 领域地图、3 句叙事、6 页 deck |
 | **P4** | zgj | 精读计划与风险 | 7 篇名单、排期、风险清单、Q&A |
 
 > CP0 记录：2026-10-31 姓名已填（xyc / zyc / szh / zgj）；全员已确认认领各自任务（P3／szh 记录）。
-> CP1 记录（2026-11-01）：19 篇入库、4 篇 venue 已核验、统计与漏斗齐，P3 验收通过。
+> CP1 记录（2026-11-01）：19 篇入库、4 篇 venue 已核验、统计与筛选流程图齐，P3 验收通过。
 > CP2 记录（2026-11-01）：P2 交付 9 篇分类表、A×E 图、3 条发现、2 张五问卡，P3 评审通过并冻结。
 > CP3 记录（2026-11-01）：P3 交付叙事、6 页 deck、RHO/SEVerA 五问卡、CP4 清单；Q&A 已确认 2/8。
 > T 记录（2026-11-01）：**汇报日 T = 2026-11-02（周一）**；CP4 当天上午执行；D1–D14 = **2026-11-03 – 11-16**（D1 = T+1）。
@@ -51,7 +51,7 @@
 - [x] 核验 4 篇 seed 的 venue：STOP、ADAS、DGM、SICA → 3 篇 `true`、SICA 为 preprint（[`midterm/p1/venue-verification.md`](midterm/p1/venue-verification.md) §1）
 - [x] 维护 `refs/verified.csv` 的 `year` / `venue` / `industry` / `role` 字段 → 19 行，`venue_verified` 4 篇 `true`
 - [x] 做 17 + 2 篇结构统计：年份、venue、industry、role 四个分布 → [`midterm/p1/stats.md`](midterm/p1/stats.md)
-- [x] 做筛选漏斗：检索 → 19 核验 → 19 skim → 7 精读候选 → [`midterm/p1/funnel.md`](midterm/p1/funnel.md)
+- [x] 做筛选流程图（flow diagram）：检索 → 19 核验 → 19 skim → 7 精读候选 → [`midterm/p1/screening-flow.md`](midterm/p1/screening-flow.md)
 
 ### 认领论文
 
@@ -65,13 +65,13 @@
 - 更新后的 `refs/pool.csv`、`refs/verified.csv`
 - 2 张新 skim 卡
 - 结构统计表
-- `funnel` 图
+- 筛选流程图（flow diagram）：[`midterm/p1/screening-flow.md`](midterm/p1/screening-flow.md)
 - 一页 data brief：**3 个数字 + 1 个判断**
 
 ### 交给
 
 - 元数据 → **P2**
-- 统计与漏斗 → **P3**
+- 统计与流程图 → **P3**
 
 ### 对应 Checkpoint
 
@@ -216,7 +216,7 @@
 ```
 P1 ──元数据──→ P2
  │               │
- │──统计/漏斗──→ P3 ←──图/发现── P2
+ │──统计/流程图──→ P3 ←──图/发现── P2
                   ↑
                   │──计划/风险── P4
 ```
@@ -240,7 +240,7 @@ P1 ──元数据──→ P2
 | CP | 通过标准 |
 |---|---|
 | **CP0** | 4 人姓名填好；每人认领任务；无悬空工作 |
-| **CP1** | 2 篇种子综述入库；4 篇 seed venue 有结论；19 篇统计与 CSV 一致；漏斗数字对得上 |
+| **CP1** | 2 篇种子综述入库；4 篇 seed venue 有结论；19 篇统计与 CSV 一致；流程图各阶段数字对得上 |
 | **CP2** | 五轴表 5 行；分类总表 7–9 篇；A×E 图 7–9 个点；3 条发现各有支撑 |
 | **CP3** | 3 句叙事；6 页 deck 骨架；7 篇名单 + 2/2/2/1 分工 + 两周排期；4 条风险；8 个 Q&A |
 | **CP4** | 数字、论文 ID、术语一致；计时 ≤ 4:40；链接全部通过；backup 页就绪 |
@@ -255,11 +255,12 @@ P1 ──元数据──→ P2
 | 2026-10-31 | 填入四人姓名（xyc / zyc / szh / zgj）；同步 P4 计划与风险文件 | CP0 姓名确认 |
 | 2026-10-31 | CP0 通过：全员确认认领任务 | P3（szh）记录 |
 | 2026-10-31 | CP2 工作稿提交：五轴表、9 篇分类表、A×E 图、3 条发现、DGM/AlphaEvolve 五问卡；CP2 置 🟡 待评审 | P2（zyc）完成 CP2 交付 |
-| 2026-11-01 | CP1 验收通过：19 篇入库、4 篇 venue 核验、统计/漏斗/data brief、STOP/ADAS 卡齐 | P1 交付完成，P3 验收 |
+| 2026-11-01 | CP1 验收通过：19 篇入库、4 篇 venue 核验、统计/流程图/data brief、STOP/ADAS 卡齐 | P1 交付完成，P3 验收 |
 | 2026-11-01 | CP2 评审通过并冻结：9 篇分类、A×E 图、3 条发现均可用；E 轴按 P2 口径修正 | P3 评审 |
 | 2026-11-01 | CP3 材料提交：叙事 3 句、6 页 deck（pptx + 脚本 + 大纲）、RHO/SEVerA 五问卡、CP4 清单、Q&A 确认表 | P3（szh）完成 CP3 交付；Q&A 2/8 已确认 |
 | 2026-11-01 | 汇报时长定为 5 分钟（≤4:40）；10 分钟版留给第三次课 | P3 决断，避免两套计时混用 |
 | 2026-11-01 | 汇报日 T 确定为 **2026-11-02**；D1–D14 映射为 11-03 – 11-16；CP4 置「当天上午执行」 | 时间点确认 |
+| 2026-11-02 | 术语更正：「漏斗 / funnel」→「筛选流程图 / flow diagram」；`midterm/p1/funnel.md` 更名为 `screening-flow.md`，全仓引用同步 | 人工审核：该图是流程图，且 ③2→④19 数量上升，不满足 funnel chart 的单调递减定义 |
 
 ---
 

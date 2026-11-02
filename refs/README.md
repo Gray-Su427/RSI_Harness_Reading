@@ -6,13 +6,19 @@
 
 | 文件 | 作用 | 维护方式 |
 |---|---|---|
-| `verified.csv` | **已核验**论文的元数据（当前 17 篇） | 手工维护 |
+| `verified.csv` | **已核验**论文的元数据（当前 19 篇） | 手工维护 |
 | `pool.csv` | 泛读候选池，**尚未**核验/筛选的全集 | 泛读阶段持续追加 |
 | `refs.bib` | BibTeX 库，供写作仓库引用 | **由 Zotero 导出**，勿手写 |
 
-> `refs.bib` 已提供引导版本（17 条，由 `verified.csv` 构造）。
+> `refs.bib` 已提供引导版本（19 条，由 `verified.csv` 构造）。
 > 按 `AGENTS.md` §7.4，最终应由 Zotero 管理并导出到本目录。
 > 写作仓库通过 `scripts/sync_refs.py` 生成本地快照，不手改快照。
+
+> ⚠️ **`fetch_pdfs.py` 目前只能解析 19 条中的 18 条**：`venue-2026-dcri-survey` 没有 arXiv ID，
+> 脚本的 arXiv / Semantic Scholar / OpenAlex 三路解析都会失败（`--dry-run` 实测为「失败 1」）。
+> 该条的 PDF 需手动取：[Preprints.org](https://www.preprints.org/manuscript/202609.0154) 或
+> [GitHub 上的 PDF](https://github.com/zoezou2015/Awesome-Data-Centric-Recursive-Improvement/blob/main/paper/dcri_survey_2026.pdf)。
+> 这是**预期失败**，不是脚本坏了；`_missing.csv` 里会如实记录。
 
 ---
 
@@ -40,18 +46,31 @@
 
 ### ⚠️ 关于 `venue_verified`
 
-**当前 17 篇全部为 `false`。**
+**当前 19 篇中 4 篇为 `true`，15 篇为 `false`（2026-10-31 更新）。**
 
-只核验了 arXiv ID 真实存在，**未核验任何录用状态**。其中 4 篇课程种子的 venue 直接来自课程 PPT，属于二手信息：
+已核验的 4 条（证据见 [`../midterm/p1/venue-verification.md`](../midterm/p1/venue-verification.md)）：
 
-- `arxiv-2310.02304` STOP — PPT 称 COLM 2024
-- `arxiv-2408.08435` ADAS — PPT 称 ICLR 2025
-- `arxiv-2505.22954` DGM — PPT 称 ICLR 2026
-- `arxiv-2504.15228` SICA — PPT 未标 venue
+- `arxiv-2310.02304` STOP — **COLM 2024（Spotlight）**，来源 COLM 2024 Accepted Papers 页
+- `arxiv-2408.08435` ADAS — **ICLR 2025（Conference）**，来源 proceedings.iclr.cc 正式条目
+- `arxiv-2505.22954` DGM — **ICLR 2026（Conference）**，来源 proceedings.iclr.cc 正式条目
+- `arxiv-2507.21046` Gao 等综述 — **TMLR 2026**，来源 arXiv HTML 的 OpenReview 标注 + ML Anthology TMLR 2026 索引
 
-**优先核验 DGM**：它同时占"工业界"与"2025–2026 新工作"两项硬指标，venue 填错影响最大。
+仍为 `false` 的 15 条中，有两条**作者自述已录用但本组未取得第三方证据**，一律不升级：
+
+- `arxiv-2606.05922` RHO — arXiv 注释自述 “Accepted to EMNLP 2026 (Findings)”
+- `arxiv-2603.25681` — arXiv 注释自述 “Accepted by TMLR”
+
+另有两条特殊情形：
+
+- `arxiv-2504.15228` SICA — 注释写 “Submitted as a preprint to NeurIPS 2025”，**投稿不等于录用**，保持 `arXiv preprint`
+- `venue-2026-dcri-survey` — **无 arXiv 版本**（题名检索 0 命中），Preprints.org 预印本，按 `venue-<年份>-<slug>` 命名
 
 核验方法见 `AGENTS.md` §7.1。**不要根据作者或机构的过往发表记录推断会议。**
+本轮 DBLP 三个入口均被人机验证拦截，改用会议官网/官方论文集，这一限制已记入 venue-verification.md §0。
+
+> 📌 `pool.csv` 目前与 `verified.csv` 内容相同（19 条）。
+> 历史上两表是同步维护的镜像；**升入 `verified.csv` 前必须完成 arXiv ID 核验**这一规则不变。
+> 若后续加入未核验候选，只写 `pool.csv`，不要污染 `verified.csv`。
 
 ### ⚠️ 关于 `axis_*` 字段
 

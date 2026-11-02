@@ -1,7 +1,7 @@
 # P1 · 数据 brief：3 个数字 + 1 个判断
 
 > 负责人：P1（xyc）｜日期：2026-10-31
-> 配套：[`stats.md`](stats.md)（四张分布表）· [`funnel.md`](funnel.md)（漏斗与检索日志）· [`venue-verification.md`](venue-verification.md)（venue 核验证据）
+> 配套：[`stats.md`](stats.md)（四张分布表）· [`screening-flow.md`](screening-flow.md)（筛选流程图与检索日志）· [`venue-verification.md`](venue-verification.md)（venue 核验证据）
 
 ---
 

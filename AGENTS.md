@@ -62,7 +62,7 @@ RSI_Harness_Reading/
 │
 ├── refs/                  文献元数据（唯一数据源）
 │   ├── README.md          ← 字段说明
-│   ├── verified.csv       ← 已核验论文（17 篇，venue_verified 全为 false）
+│   ├── verified.csv       ← 已核验论文（19 篇，4 篇 venue 已核验）
 │   ├── pool.csv           ← 泛读候选池（表头）
 │   ├── refs.bib           ← BibTeX；写作仓库经 sync_refs.py 同步
 │   └── pdfs/              ← PDF 缓存（.gitignore 忽略）
@@ -197,7 +197,7 @@ RSI_Harness_Reading/
 - [ ] 其中 **≥1 篇**经典或高质量**同行评审**论文（非 preprint）
 - [ ] 其中 **≥1 篇** **2025–2026** 新工作
 - [ ] 其中 **≥1 篇工业界**（或产学合作）研究——`industry: true` 且 `org` 非空
-      （现有 **10 篇**候选，见 §8.3；口径为"署名含企业机构"，国家实验室不算）
+      （现有 **11 篇**候选，见 §8.3；其中 3 篇为综述不可作实证，可用 8 篇；口径为"署名含企业机构"，国家实验室不算）
 - [ ] 方法比较表完成（所有精读论文在同一张表内对比）
 - [ ] 分类体系有 **≥2 篇**论文作为每条轴的例证
 - [ ] 每条 `axis_e_recursiveness` 均附**作者原话**佐证
@@ -238,7 +238,7 @@ RSI_Harness_Reading/
 
 统一由 Zotero 管理并导出到 `refs/refs.bib`。手写 BibTeX 字段错误率高，不建议。
 
-> 当前 `refs/refs.bib` 已提供**引导版本**（17 条，由 `verified.csv` 构造）。
+> 当前 `refs/refs.bib` 已提供**引导版本**（19 条，由 `verified.csv` 构造）。
 > 写作仓库用 `scripts/sync_refs.py` 生成本地快照，不要手改快照。
 
 ### 7.5 PDF 获取
@@ -259,28 +259,29 @@ python scripts/fetch_pdfs.py --only arxiv-2505.22954
 
 ## 8. 种子论文池（已核验）
 
-> **核验时间：2026-10-12。** 全部通过 arXiv 实际检索确认存在。
-> `venue` 一栏中，标注 ⚠️ 的表示**来自课程 PPT，尚未独立核验录用状态**——入库前请按 7.1 复核。
+> **核验时间：2026-10-12 首次核验；2026-10-31 由 P1（xyc）补两篇种子综述并核验 4 篇 seed 的 venue（CP1）。**
+> `venue` 一栏中，标注 ⚠️ 的表示**尚未独立核验录用状态**——入库前请按 7.1 复核。
 >
-> ✅ **泛读进度（2026-10-13）**：17 篇全部完成泛读卡片，见 `notes/skim/`（17 个 `.md`）。
-> 卡片中的作者原话已逐条回查 PDF 核实。
-> 泛读同时发现并更正了 3 处元数据错误（STOP 机构、SEVerA 标题、8 篇 `industry` 口径），
+> ✅ **泛读进度（2026-10-13 / 2026-10-31 补两篇）**：19 篇全部有泛读卡片，见 `notes/skim/`（19 个 `.md`）。
+> 卡片中的作者原话已逐条回查 PDF/官方页面核实。
+> 泛读与 CP1 期间更正了 4 处元数据错误（STOP 机构、SEVerA 标题、Code as Agent Harness 作者数、8 篇 `industry` 口径），
 > 均已在 `verified.csv` 的 `note` 字段留痕。
 > ⚠️ **`axis_*` 五列仍保持泛读前的原样**——泛读判断只写在卡片里且标注"待精读确认"，
 > 按 §7.1 纪律，未经精读不填 CSV。
 >
-> 📄 **机器可读版本：[`refs/verified.csv`](refs/verified.csv)**（17 行）。
+> 📄 **机器可读版本：[`refs/verified.csv`](refs/verified.csv)**（19 行）。
 > 下表是它的人类可读镜像；**以 CSV 为准**，两者若有冲突改 CSV。
-> 所有条目的 `venue_verified` 当前**均为 `false`**。
+> `venue_verified` 现状：**4 篇 `true`**（STOP·ADAS·DGM·Gao 综述），其余 15 篇 `false`；
+> 证据见 [`midterm/p1/venue-verification.md`](midterm/p1/venue-verification.md)。
 
 ### 8.1 课程指定的四篇种子
 
 | ID | 标题 | 作者 | 年份 | Venue | 满足指标 |
 |---|---|---|---|---|---|
-| `arxiv-2310.02304` | Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation | Zelikman, Lorch, Mackey, Kalai | 2023 | ⚠️ COLM 2024 | 经典同行评审 |
-| `arxiv-2408.08435` | Automated Design of Agentic Systems | Hu, Lu, Clune | 2024 | ⚠️ ICLR 2025 | 经典同行评审 |
-| `arxiv-2504.15228` | A Self-Improving Coding Agent | Robeyns, Szummer, Aitchison | 2025 | ⚠️ 2025 | — |
-| `arxiv-2505.22954` | Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents | Zhang, Hu, Lu, Lange, Clune | 2025 | ⚠️ ICLR 2026 | 工业界（Sakana AI） |
+| `arxiv-2310.02304` | Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation | Zelikman, Lorch, Mackey, Kalai | 2023 | ✅ COLM 2024（Spotlight） | 经典同行评审 |
+| `arxiv-2408.08435` | Automated Design of Agentic Systems | Hu, Lu, Clune | 2024 | ✅ ICLR 2025 | 经典同行评审 |
+| `arxiv-2504.15228` | A Self-Improving Coding Agent | Robeyns, Szummer, Aitchison | 2025 | ⚠️ arXiv preprint（注释仅称投稿 NeurIPS 2025） | — |
+| `arxiv-2505.22954` | Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents | Zhang, Hu, Lu, Lange, Clune | 2025 | ✅ ICLR 2026 | 工业界（Sakana AI） |
 
 ### 8.2 直接命中"Harness 自进化"的 2025–2026 工作
 
@@ -288,7 +289,7 @@ python scripts/fetch_pdfs.py --only arxiv-2505.22954
 |---|---|---|---|---|
 | `arxiv-2606.09498` | Self-Harness: Harnesses That Improve Themselves | Zhang, Zhang, Li, Zhang, Chen, Zhang, Bai, Hu | 2026 | harness 设计是**模型特定**的；上海人工智能实验室（国家实验室，**不算工业界**） |
 | `arxiv-2607.15524` | Recursive Harness Self-Improvement | Lee, Xu, Seely, Lee, Zaharia, Tang | 2026 | harness-in-the-loop；Sakana AI / UC Berkeley；自称 recursive 但只完成递归循环前半段 |
-| `arxiv-2605.18747` | Code as Agent Harness | Ning, Tieu, Fu, …(52 位作者) | 2026 | 概念统一框架：**代码即 harness**；UIUC / Meta / Stanford；综述立场文，无方法无实验 |
+| `arxiv-2605.18747` | Code as Agent Harness | Ning, Tieu, Fu, …（arXiv 元数据 42 位；PDF 正文人数口径待核） | 2026 | 概念统一框架：**代码即 harness**；UIUC / Meta / Stanford；综述立场文，无方法无实验 |
 | `arxiv-2608.07645` | Mendel Gödel Machine | Liu, Liu, Yan, Tresp, Ma | 2026 | 用 archive 中**多条轨迹**做比较进化 |
 | `arxiv-2606.05922` | Evolving Agents in the Dark: Retrospective Harness Optimization via Self-Preference (RHO) | Pan, Liu, Lin, … | 2026 | **无需标注验证集**，仅用历史轨迹自监督优化 harness |
 | `arxiv-2605.30621` | Harness Updating Is Not Harness Benefit | Lin, Wu, Wang | 2026 | 🔴 **争议核心**：能更新 ≠ 有收益 |
@@ -312,9 +313,10 @@ python scripts/fetch_pdfs.py --only arxiv-2505.22954
 | `arxiv-2504.15228` | SICA | **iGent AI** + Bristol | 2025 | 首个把 meta agent = target agent 落到完整 codebase |
 | `arxiv-2605.18747` | Code as Agent Harness | **Meta** + UIUC + Stanford | 2026 | 概念框架长文，不作证据 |
 | `arxiv-2610.00093` | Safety in Self-Evolving Agents | **Alibaba** + **OPPO** + **Rakuten** + ZJU | 2026 | 把编排当**风险载体**而非改进对象 |
+| `venue-2026-dcri-survey` | Data-Centric Recursive Improvement for Foundation Models | **JD Future Academy** + HKUST(GZ) 等 | 2026 | 数据层综述；未同行评审；不作证据 |
 
-> ⚠️ `arxiv-2605.18747`（Meta）与 `arxiv-2610.00093`（Alibaba/OPPO/Rakuten）虽为产学合作，
-> 但均为综述、无自我改进效果证据，**不可充当 Gate 2 的工业界实证项**。
+> ⚠️ `arxiv-2605.18747`（Meta）、`arxiv-2610.00093`（Alibaba/OPPO/Rakuten）与 `venue-2026-dcri-survey`（JD）
+> 虽为产学合作/企业署名，但均为综述、无自我改进效果证据，**不可充当 Gate 2 的工业界实证项**。
 
 ### 8.4 综述类（用于建立地图，不作为主要证据）
 
@@ -325,8 +327,14 @@ python scripts/fetch_pdfs.py --only arxiv-2505.22954
 | `arxiv-2610.00093` | 🔴 Safety in Self-Evolving Agents: A Survey | 2026 |
 | `arxiv-2603.25681` | Self-Improvement of Large Language Models: A Technical Overview and Future Outlook | 2026 |
 | `arxiv-2607.07663` | Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops | 2026 |
+| `arxiv-2507.21046` | A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve（**TMLR 2026**，课程指定种子综述） | 2025 |
+| `venue-2026-dcri-survey` | Data-Centric Recursive Improvement for Foundation Models: A Survey（**无 arXiv 版本**，课程指定种子综述） | 2026 |
 
-> 课程 PPT 第 8 页推荐的另两篇综述（*A Survey of Self-Evolving Agents*、*Data-Centric Recursive Improvement for Foundation Models*）未给出 arXiv ID，需自行检索后补入。
+> 课程 PPT 第 8 页推荐的两篇种子综述已于 **2026-10-31** 补入，见 `notes/skim/arxiv-2507.21046.md`、
+> `notes/skim/venue-2026-dcri-survey.md`。检索与核验记录见 `midterm/p1/screening-flow.md` §3：
+> *Data-Centric Recursive Improvement for Foundation Models* **在 arXiv 上不存在**（题名检索 0 命中），
+> 其正式载体是 Preprints.org 预印本（DOI `10.20944/preprints202609.0154`），故按 `venue-<年份>-<slug>` 命名。
+> 引用它时不得写成「arXiv 论文」。
 
 ### 8.5 论文池扩充方向
 
@@ -376,4 +384,4 @@ search_arxiv("Self-Harness", max_results=1)
 
 ---
 
-*最后更新：2026-10-30*
+*最后更新：2026-10-31*
