@@ -23,10 +23,11 @@
 
 | 文件 | 内容 | 对应 CP3 要求 | 状态 |
 |---|---|---|---|
-| [`narrative.md`](narrative.md) | 1 句核心结论 + 3 句叙事 + 17 条数字锚点 + 8 条禁用表述 | 3 句叙事 | ✅ 定稿候选 |
-| [`deck-outline.md`](deck-outline.md) | 6 页逐页内容、计时（280 s）、逐页讲稿 | 6 页 deck 骨架 | ✅ 定稿候选 |
-| [`deck-rsi-midterm.pptx`](deck-rsi-midterm.pptx) | 16:9 deck：6 页正文 + 2 页 backup，含讲稿与【论据】备注；标题 30 / 正文 12–14 | deck 成品 | ✅ 可放映 |
-| [`make_deck.py`](make_deck.py) | deck 生成脚本（可复现） | 复现 | ✅ 可运行 |
+| [`narrative.md`](narrative.md) | 1 句核心结论 + 3 句叙事 + 数字锚点 + 禁用表述 | 3 句叙事 | ✅ 已按重构版更新 |
+| [`deck-outline.md`](deck-outline.md) | 7 页逐页内容、计时（280 s）、逐页讲稿 | 7 页正文骨架 | ✅ 重构版 |
+| [`RSI-Harness-中期汇报-2026-11-02.pptx`](RSI-Harness-中期汇报-2026-11-02.pptx) | 16:9 deck：7 页正文 + 3 页 backup，含讲稿与【论据】备注 | deck 成品 | ✅ 可放映 |
+| [`make_deck_v2.py`](make_deck_v2.py) | 重构版 deck 生成脚本（可复现） | 复现 | ✅ 可运行 |
+| [`make_taxonomy_clean.py`](make_taxonomy_clean.py) | 重画 A×E 图，去掉图内标题/右栏/长图例 | 图 | ✅ 可运行 |
 | [`rho-brief.md`](rho-brief.md) | RHO 讲述级五问卡 | P3 认领论文 | ✅ 讲述级 |
 | [`severa-brief.md`](severa-brief.md) | SEVerA 讲述级五问卡 | P3 认领论文 | ✅ 讲述级 |
 | [`cp4-checklist.md`](cp4-checklist.md) | CP4 一致性校对清单（数字/ID/术语/计时/链接/backup） | CP4 | ✅ 待汇报当天执行 |
@@ -39,9 +40,9 @@
 ## 2. 五条口径（评审时先看这五条）
 
 1. **样本是 9 篇，不是 19 篇**：7 篇精读名单 + 2 篇泛读补充（SICA、MGM）。19 篇是全池，只用于「规模 / 时效 / 可信度」三个数字。
-2. **E 轴只认作者自我界定**：能落位的只有 3 篇（STOP=`iterative`、DGM=`full-rsi` 仅代码层、RHO=`one-shot`）+ SICA 候选；5 篇待精读。**不写「递归深度集中在 one-shot / iterative」**。
+2. **E 轴只认作者自我界定**：说清的只有 3 篇（STOP=`iterative`、DGM=`full-rsi` 仅代码层、RHO=`one-shot`）+ SICA 候选；5 篇未界定。**不写「递归深度集中在 one-shot / iterative」**。
 3. **A 轴记主值（次值）**：计数只按主值。DGM 的次值是 `tool/prompt/context`，**不含 `evaluator`**。
-4. **边界工作保留，不硬归类**：AlphaEvolve（任务算法）、SEVerA（Learn 改权重）、Harness≠Benefit（测量）三篇保留并标注，不作 harness RSI 的正面证据。
+4. **三篇只作对照，不硬归类**：AlphaEvolve（任务算法）、SEVerA（Learn 改权重）、Harness≠Benefit（测量）三篇保留并标注，不作 harness RSI 的正面证据；讲的时候直接说“不算 harness 的 2 篇”，不用“边界”这个词。
 5. **【原文】与【本组判断】分开**：五问卡逐条引作者原话；我们的推论与防火墙表述一律标【本组判断】。
 
 ---
@@ -55,7 +56,7 @@
 | P3（szh） | Q&A ⑤⑥（已确认）、全文核对 | [`qa-signoff.md`](qa-signoff.md) §3 |
 | P4（zgj） | Q&A ⑦⑧ 确认；复核 P3 已代改的 `plan.md` T/D1–D14、`risk.md` R1/R4、`qa.md` Q1/Q2 | [`cp4-checklist.md`](cp4-checklist.md) §7 |
 
-> 未确认前，主讲人不得用「我们」口径；deck 第 7 页页脚已标注这一点。
+> 未确认前，主讲人不得用「我们」口径；B1 的 ①② 仍待 P1 确认。
 
 ---
 
@@ -63,12 +64,13 @@
 
 ```bash
 cd midterm/p3
-python make_deck.py        # 重新生成 deck-rsi-midterm.pptx（需 python-pptx + Pillow）
+python make_taxonomy_clean.py   # 生成 taxonomy-ae-clean.png
+python make_deck_v2.py          # 生成 RSI-Harness-中期汇报-2026-11-02.pptx
 ```
 
-- 依赖：Python 3.10+、`python-pptx`（1.0.2 已验证）、`lxml`；中文字体 **Microsoft YaHei**。
-- 图：`../p2/taxonomy-ae.png`（300 dpi，P2 生成；本目录不复制、不修改）。
-- 改 deck 的顺序：先改 [`narrative.md`](narrative.md) 与 [`deck-outline.md`](deck-outline.md) → 再改 `make_deck.py` → 重跑 → 用 PowerPoint 检查 8 页。
+- 依赖：Python 3.10+、`python-pptx`（1.0.2 已验证）、`lxml`、`matplotlib`；中文字体 **Microsoft YaHei**。
+- 图：`taxonomy-ae-clean.png`（由本目录 `make_taxonomy_clean.py` 生成，数据同 P2 `taxonomy-ae.png`）。
+- 改 deck 的顺序：先改 [`narrative.md`](narrative.md) 与 [`deck-outline.md`](deck-outline.md) → 再改 `make_deck_v2.py` → 重跑 → 用 PowerPoint 检查 10 页（7 正文 + 3 backup）。
 
 ---
 
@@ -80,6 +82,7 @@ python make_deck.py        # 重新生成 deck-rsi-midterm.pptx（需 python-ppt
 | 2026-11-01 | 叙事第 2 句按 P2 口径修正（取消「递归深度集中」） | `p2/README.md` §3 口径提醒 |
 | 2026-11-01 | 写入汇报日 T = 2026-11-02，D1–D14 = 11-03 – 11-16；deck 页脚与第 6 页排期同步 | T 确认 |
 | 2026-11-02 | deck 可读性重排：标题 30、正文 12–14、大数字 32–34；屏幕文字减约 1/3，论据移入讲稿备注；第 3 页图放宽到 8.7 英寸 | 投影后排可读 |
+| 2026-11-02 | 结构重构：7 页正文 + 3 backup；三条证据按结论三分句切；6/9 注明 2 篇不算 harness、剔除后 4/9；`co-evolution` 改为 0 篇确认；149 漏斗移 B3 | 原版页面职责重复、n 口径跳变、6/9 与“2 篇不算”自相矛盾 |
 
 ---
 
