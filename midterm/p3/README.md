@@ -25,7 +25,7 @@
 |---|---|---|---|
 | [`narrative.md`](narrative.md) | 1 句核心结论 + 3 句叙事 + 17 条数字锚点 + 8 条禁用表述 | 3 句叙事 | ✅ 定稿候选 |
 | [`deck-outline.md`](deck-outline.md) | 6 页逐页内容、计时（280 s）、逐页讲稿 | 6 页 deck 骨架 | ✅ 定稿候选 |
-| [`deck-rsi-midterm.pptx`](deck-rsi-midterm.pptx) | 16:9 deck：6 页正文 + 2 页 backup，含讲稿备注 | deck 成品 | ✅ 可放映 |
+| [`deck-rsi-midterm.pptx`](deck-rsi-midterm.pptx) | 16:9 deck：6 页正文 + 2 页 backup，含讲稿与【论据】备注；标题 30 / 正文 12–14 | deck 成品 | ✅ 可放映 |
 | [`make_deck.py`](make_deck.py) | deck 生成脚本（可复现） | 复现 | ✅ 可运行 |
 | [`rho-brief.md`](rho-brief.md) | RHO 讲述级五问卡 | P3 认领论文 | ✅ 讲述级 |
 | [`severa-brief.md`](severa-brief.md) | SEVerA 讲述级五问卡 | P3 认领论文 | ✅ 讲述级 |
@@ -79,6 +79,7 @@ python make_deck.py        # 重新生成 deck-rsi-midterm.pptx（需 python-ppt
 | 2026-11-01 | 建立本目录：叙事、6 页 deck（pptx + 脚本 + 大纲）、RHO/SEVerA 五问卡、CP4 清单、Q&A 确认表 | CP3 交付 |
 | 2026-11-01 | 叙事第 2 句按 P2 口径修正（取消「递归深度集中」） | `p2/README.md` §3 口径提醒 |
 | 2026-11-01 | 写入汇报日 T = 2026-11-02，D1–D14 = 11-03 – 11-16；deck 页脚与第 6 页排期同步 | T 确认 |
+| 2026-11-02 | deck 可读性重排：标题 30、正文 12–14、大数字 32–34；屏幕文字减约 1/3，论据移入讲稿备注；第 3 页图放宽到 8.7 英寸 | 投影后排可读 |
 
 ---
 
